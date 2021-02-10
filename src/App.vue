@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>ToDo List</h1>
+  <add-task @add-list='onAddTask'></add-task>
+  <display-task
+    v-for="x in taskList"
+    :key='x.id'
+    :task='x.task'
+  ></display-task>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  data(){
+    return{
+      taskList:[]
+    }
+  },
+  methods:{
+    onAddTask(value){
+      const newTask = {
+        id: new Date().toISOString(),
+        task: value
+      }
+      this.taskList.push(newTask)
+    }
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
