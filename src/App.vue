@@ -6,7 +6,9 @@
   <display-task
     v-for="x in taskList"
     :key='x.id'
+    :id='x.id'
     :task='x.task'
+    @remove-item='onDeleteTask'
   ></display-task>
 </template>
 
@@ -24,6 +26,11 @@ export default {
         task: value
       }
       this.taskList.push(newTask)
+      localStorage.setItem('todo-task', JSON.stringify(this.taskList))
+    },
+    onDeleteTask(value){
+      const removeTask = this.taskList.filter((item) => item.id !== value)
+      this.taskList = removeTask
       localStorage.setItem('todo-task', JSON.stringify(this.taskList))
     }
   },

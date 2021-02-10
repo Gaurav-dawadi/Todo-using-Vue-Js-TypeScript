@@ -3,7 +3,7 @@
         <div class="main-task">{{task}}</div>
         <div class="button-wrapper">
             <button>Update</button>
-            <button>Delete</button>
+            <button @click="removeItem">Delete</button>
         </div>
     </div>
 </template>
@@ -11,8 +11,14 @@
 <script>
 export default {
     props:{
+        id:String,
         task: String
     },
+    methods:{
+        removeItem(){
+            this.$emit('remove-item', this.id)
+        }
+    }
 }
 </script>
 
