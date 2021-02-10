@@ -1,5 +1,7 @@
 <template>
-  <h1>ToDo List</h1>
+  <div class="header-wrapper">
+    <h1>ToDo List</h1>
+  </div>
   <add-task @add-list='onAddTask'></add-task>
   <display-task
     v-for="x in taskList"
@@ -32,3 +34,19 @@ export default {
   }
 }
 </script>
+
+<style>
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5em;
+  background-color: darkcyan;
+  color: white;
+}
+</style>

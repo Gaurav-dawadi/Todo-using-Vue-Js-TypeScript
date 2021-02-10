@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="task-wrapper">
         <div class="main-task">{{task}}</div>
-        <div class="main-button">
+        <div class="button-wrapper">
             <button>Update</button>
             <button>Delete</button>
         </div>
@@ -17,17 +17,16 @@ export default {
 </script>
 
 <style scoped>
-div{
-    margin: 10px;
+.task-wrapper{
     display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 2em;
 }
 .main-task{
-    margin: 1em;
+    margin-right: 3em;
 }
-.main-button{
-    margin: 1em;
-}
-button{
-    margin-left: .5em;
+.button-wrapper button{
+    margin-right: 1em;
 }
 </style>
