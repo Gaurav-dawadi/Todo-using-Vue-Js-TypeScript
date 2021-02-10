@@ -22,7 +22,13 @@ export default {
         task: value
       }
       this.taskList.push(newTask)
+      localStorage.setItem('todo-task', JSON.stringify(this.taskList))
     }
   },
+  mounted(){
+      if (localStorage.getItem('todo-task')){
+          this.taskList = JSON.parse(localStorage.getItem('todo-task'));
+      }
+  }
 }
 </script>
