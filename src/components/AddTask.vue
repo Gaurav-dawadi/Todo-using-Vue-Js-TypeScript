@@ -1,25 +1,26 @@
 <template>
     <div class='input-wrapper'>
-        <form @submit="addTask">
-            <input type="text" placeholder="Enter Task">
+        <form @submit.prevent="addTask">
+            <input type="text" placeholder="Enter Task" v-model="task">
         </form>
     </div>
 </template>
 
-
 <script lang='ts'>
-import {Vue} from 'vue-class-component'
+import {Vue, Options} from 'vue-class-component'
 
-
+@Options({
+    emits: ['submit-task']
+})
 export default class AddTask extends Vue{
-    task = String
+    task = ''
 
     addTask(){
-        this.$emit('submit-task',this.task)
+        this.$emit('submit-task', this.task)
+        this.task = ''
     }
 }
 </script>
-
 
 <style scoped>
 .input-wrapper{
