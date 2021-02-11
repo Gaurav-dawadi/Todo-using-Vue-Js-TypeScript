@@ -1,18 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>Todo List</div>
+  <AddTask @submit-task="taskAdd" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import AddTask from './components/AddTask.vue'
 
 @Options({
-  components: {
-    HelloWorld,
+  components:{
+    AddTask,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue{
+  taskList = Array 
+
+  // taskList: {id: string, task: string}[]
+
+  taskAdd(value){
+    const newTask = {
+      id: new Date().toISOString(),
+      task: value as String
+    }
+
+    this.taskList.push(newTask)
+  }
+}
 </script>
 
 <style>
