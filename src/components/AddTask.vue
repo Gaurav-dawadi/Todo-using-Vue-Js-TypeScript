@@ -15,7 +15,8 @@ import {Vue, Options} from 'vue-class-component'
 export default class AddTask extends Vue{
     task = ''
 
-    addTask(){
+    //This function doesnot return anything. So used void
+    addTask(): void{
         this.$emit('submit-task', this.task)
         this.task = ''
     }

@@ -1,24 +1,10 @@
 # todo-typescript
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
+master branch: Todo using Vue and JavaScript
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
+main branch: Todo using Vue and TypeScript
 ```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

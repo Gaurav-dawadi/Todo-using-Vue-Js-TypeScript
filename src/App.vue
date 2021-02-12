@@ -27,7 +27,10 @@ interface TaskList {
   }, 
 })
 export default class App extends Vue {
-  taskList: TaskList[] = [] as TaskList[]
+  taskList: TaskList[] = []
+  // taskList: Array<TaskList> = []
+  // taskList: object[] = []
+  // taskList: Array<object> = []
 
   taskAdd(value: string){
     const newTask = {
